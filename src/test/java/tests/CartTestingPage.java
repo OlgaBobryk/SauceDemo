@@ -1,13 +1,11 @@
 package tests;
-
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 
-import java.util.concurrent.Callable;
+
 
 
 public class CartTestingPage extends BaseTest {
