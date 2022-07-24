@@ -10,7 +10,7 @@ public class BaseTest {
     WebDriver driver;
 
     @BeforeMethod
-    public void srtUp() {
+    public void settUp() {
         //Open Chrome browser
         PropertyManager propertyManager = new PropertyManager();
         propertyManager.loadData();
