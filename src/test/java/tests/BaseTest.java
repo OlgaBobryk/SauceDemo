@@ -6,6 +6,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import utils.PropertyManager;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseTest {
     WebDriver driver;
 
@@ -16,7 +18,18 @@ public class BaseTest {
         propertyManager.loadData();
         System.setProperty("webdriver.chrome.driver", propertyManager.get("PATH_TO_DRIVER"));
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        setImplicityWait();
     }
+    public void setImplicityWait(){
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+    }
+    public void removeImplicityWait(){
+        driver.manage().timeouts().implicitlyWait(0,TimeUnit.SECONDS);
+
+    }
+
 
     @AfterTest(alwaysRun = true)
     public void tearDown() {
