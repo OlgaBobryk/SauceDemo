@@ -19,18 +19,23 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-    public void  openPage(){
-        driver.get(Urls.REGISTER_FORM_URL);
-    }
 
-    public boolean loginButtonIsDisplayed(){
+    @Override
+    public boolean isComponentLoad() {
         return loginButton.isDisplayed();
     }
 
-    public void loginForm(){
+    public LoginPage  openPage(){
+        driver.get(Urls.REGISTER_FORM_URL);
+        return this;
+    }
+
+
+    public ProductsPage loginForm(){
         usernameInput.sendKeys(Register.USERNAME);
         passwordInput.sendKeys(Register.PASSWORD);
         loginButton.click();
+        return new ProductsPage(driver);
 
     }
 }
