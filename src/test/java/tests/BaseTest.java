@@ -12,11 +12,11 @@ public class BaseTest {
     WebDriver driver;
 
     @BeforeMethod
-    public void settUp() {
+    public void setUp() {
         //Open Chrome browser
         PropertyManager propertyManager = new PropertyManager();
         propertyManager.loadData();
-        System.setProperty("webdriver.chrome.driver", propertyManager.get("PATH_TO_DRIVER"));
+        System.setProperty("webdriver.chrome.driver", propertyManager.get("PATH_TO_CHROME"));
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         setImplicityWait();

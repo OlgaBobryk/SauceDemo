@@ -6,8 +6,6 @@ import pages.LoginPage;
 import pages.ProductsPage;
 
 
-
-
 public class CartTestingPage extends BaseTest {
 
     @Test
