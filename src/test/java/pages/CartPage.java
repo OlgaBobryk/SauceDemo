@@ -11,13 +11,21 @@ public class CartPage extends BasePage {
     private WebElement backPackInCart;
     @FindBy(xpath = "//div[text()='29.99']")
     private WebElement priceInCart;
+    @FindBy(xpath = "//button[@id='checkout']")
+    private WebElement checkoutButton;
 
     public CartPage(WebDriver driver) {
         super(driver);
     }
 
-    public void openShoppingCart() {
+    @Override
+    public boolean isComponentLoad() {
+        return checkoutButton.isDisplayed();
+    }
+
+    public CartPage openShoppingCart() {
         shoppingCart.click();
+        return this;
     }
 
     public String infoAboutTitel() {
