@@ -1,5 +1,6 @@
 package tests;
 
+import factorymanager.DriverManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LinkLinkedinPage;
@@ -12,16 +13,17 @@ public class LogoLinkedinPageTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openPage();
         loginPage.loginForm();
-        removeImplicityWait();
         LinkLinkedinPage linkLinkedin = new LinkLinkedinPage(driver);
         linkLinkedin.clickLink();
         LinkedinPage linkedin = new LinkedinPage(driver);
         linkedin.openNewTab();
         linkedin.waitLoad();
         linkedin.logoIsDisplayed();
-        setImplicityWait();
         Assert.assertTrue(linkedin.logoIsDisplayed(), "There isn't LinkedinLogo");
 
     }
+
+
+
 
 }

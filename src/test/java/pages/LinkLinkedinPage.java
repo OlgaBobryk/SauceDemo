@@ -14,7 +14,13 @@ public class LinkLinkedinPage extends BasePage {
         super(driver);
     }
 
-    public void clickLink() {
+    @Override
+    public boolean isComponentLoad() {
+        return linkLinkedin.isDisplayed();
+    }
+
+    public LinkLinkedinPage clickLink() {
         linkLinkedin.click();
+        return new LinkLinkedinPage(driver);
     }
 }
