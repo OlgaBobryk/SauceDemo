@@ -6,9 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 public abstract class BasePage {
     public WebDriver driver;
 
-    public BasePage(WebDriver driver){
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
-    public  abstract  boolean isComponentLoad();
+
+    public abstract boolean isComponentLoad();
 }

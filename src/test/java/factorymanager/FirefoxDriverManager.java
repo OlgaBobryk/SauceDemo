@@ -2,7 +2,7 @@ package factorymanager;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import utils.PropertyManager;
+
 
 public class FirefoxDriverManager extends DriverManager {
     @Override

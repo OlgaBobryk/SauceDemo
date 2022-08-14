@@ -7,19 +7,19 @@ import pages.LinkedinPage;
 import pages.LoginPage;
 import utils.RetryAnalyser;
 
-public class LogoLinkedinPageTest extends BaseWithThreadLocal {
+public class FailedLogoLinkedinPageTest extends BaseWithFactoryTest {
     @Test(retryAnalyzer = RetryAnalyser.class)
     public void checkLogoLinkedin() {
-        LoginPage loginPage = new LoginPage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.openPage();
         loginPage.loginForm();
-        LinkLinkedinPage linkLinkedin = new LinkLinkedinPage(getDriver());
+        LinkLinkedinPage linkLinkedin = new LinkLinkedinPage(driver);
         linkLinkedin.clickLink();
-        LinkedinPage linkedin = new LinkedinPage(getDriver());
+        LinkedinPage linkedin = new LinkedinPage(driver);
         linkedin.openNewTab();
         linkedin.waitLoad();
         linkedin.logoIsDisplayed();
-        Assert.assertTrue(linkedin.logoIsDisplayed(), "There isn't LinkedinLogo");
+        Assert.assertFalse(linkedin.logoIsDisplayed(), "There isn't LinkedinLogo");
 
     }
 

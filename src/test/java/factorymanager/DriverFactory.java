@@ -12,7 +12,7 @@ public class DriverFactory {
                 driverManager = new FirefoxDriverManager();
                 break;
             case REMOTE:
-                driverManager=new RemoteDriverManager();
+                driverManager = new RemoteDriverManager();
                 break;
             default:
                 throw new IllegalStateException("Unexpected driver type " + driverType);

@@ -10,19 +10,23 @@ public abstract class DriverManager {
     public abstract void createDriver();
 
 
-    public WebDriver getDriver(){
+    public WebDriver getDriver() {
         return driver;
     }
-    public void startMaximize(){
+
+    public void startMaximize() {
         driver.manage().window().maximize();
     }
-    public void  setTimeout(){
+
+    public void setTimeout() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
-    public void removeTimeout(){
-        driver.manage().timeouts().implicitlyWait(0,TimeUnit.SECONDS);
+
+    public void removeTimeout() {
+        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
     }
-    public void quitDriver(){
+
+    public void quitDriver() {
         driver.quit();
     }
 
