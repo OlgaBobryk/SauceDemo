@@ -1,21 +1,23 @@
 package tests;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.LoginPage;
 import pages.ProductsPage;
+import utils.RetryAnalyser;
 
 
-public class CartTestingPage extends BaseTest {
+public class CartPageTest extends BaseWithThreadLocal {
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void priceAndGoodsTest() {
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
         loginPage.openPage();
         loginPage.loginForm();
-        ProductsPage productsPage = new ProductsPage(driver);
+        ProductsPage productsPage = new ProductsPage(getDriver());
         productsPage.addBackpackToCart();
-        CartPage cartPage = new CartPage(driver);
+        CartPage cartPage = new CartPage(getDriver());
         cartPage.openShoppingCart();
         String titelActual = cartPage.infoAboutTitel();
         String priceActual = cartPage.infoAboutPrice();

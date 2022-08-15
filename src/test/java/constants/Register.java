@@ -7,6 +7,5 @@ public class Register {
     public static final String USERNAME3 = "performance_glitch_user";
 
 
-
     public static final String PASSWORD = "secret_sauce";
 }

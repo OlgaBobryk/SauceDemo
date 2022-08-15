@@ -29,11 +29,11 @@ public class CartPage extends BasePage {
     }
 
     public String infoAboutTitel() {
-       return backPackInCart.getText();
+        return backPackInCart.getText();
     }
 
     public String infoAboutPrice() {
-      return   priceInCart.getText();
+        return priceInCart.getText();
     }
 
 }

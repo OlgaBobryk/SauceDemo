@@ -8,7 +8,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RemoteDriverManager extends DriverManager{
+public class RemoteDriverManager extends DriverManager {
     @Override
     public void createDriver() {
         SafariOptions browserOptions = new SafariOptions();
@@ -18,12 +18,12 @@ public class RemoteDriverManager extends DriverManager{
         sauceOptions.put("build", "1");
         sauceOptions.put("name", "SauceDemo");
         browserOptions.setCapability("sauce:options", sauceOptions);
-try {
-    driver = new RemoteWebDriver( new URL("https://oauth-oljinja86-b76cd:12e55c15-9289-4230-8e9b-25ead80f3bfb@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), browserOptions);
+        try {
+            driver = new RemoteWebDriver(new URL("https://oauth-oljinja86-b76cd:12e55c15-9289-4230-8e9b-25ead80f3bfb@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), browserOptions);
 
-}catch (MalformedURLException e){
-    e.printStackTrace();
-}
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
 
     }
 }
